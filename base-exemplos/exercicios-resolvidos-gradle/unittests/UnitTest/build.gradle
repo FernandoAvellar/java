@@ -13,3 +13,18 @@ apply plugin: 'java'
 repositories {
     mavenCentral()
 }
+
+dependencies {
+ testCompile 'junit:junit:4.12'
+}
+
+task minhaTask
+
+minhaTask.doLast{
+ println "Faz isso depois de tudo:"
+ println "O resultado dos testes se encontram aqui: " + testResultsDir
+}
+
+minhaTask.doFirst{
+ println "Faz isso primeiro:"
+}
